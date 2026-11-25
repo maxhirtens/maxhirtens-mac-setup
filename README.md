@@ -521,7 +521,18 @@ npx skills add neondatabase/agent-skills \
   --skill neon-postgres \
   --skill neon-postgres-branches \
   -g -a claude-code -y
+
+npx skills add mattpocock/skills \
+  --skill wayfinder \
+  --skill grilling \
+  --skill domain-modeling \
+  --skill research \
+  --skill prototype \
+  --skill setup-matt-pocock-skills \
+  -g -a claude-code -y
 ```
+
+`wayfinder` calls the other five mattpocock skills by name, so they install with it. Run `/setup-matt-pocock-skills` once in a repo before its first `/wayfinder`; that writes the repo's issue-tracker config.
 
 The addyosmani development set and every stripe skill are deliberately absent — the plugins above already provide them. The stripe plugin is built from the same `stripe/ai` repo the npx registry serves, so any `npx skills add stripe/ai` line duplicates it exactly.
 
